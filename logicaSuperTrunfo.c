@@ -1,62 +1,58 @@
 #include <stdio.h>
 
-typedef struct {
-    char nomePais[50];
-    int populacao;
-    double area;
-    double pib;
-    int pontosTuristicos;
-    double densidadeDemografica;
-} Carta;
-
 int main() {
-    Carta carta1, carta2;
-
+    char nomePais1[50], nomePais2[50];
+    int populacao1, populacao2;
+    double area1, area2;
+    double pib1, pib2;
+    int pontosTuristicos1, pontosTuristicos2;
+    double densidadeDemografica1, densidadeDemografica2;
+    
     printf("=== Cadastro das Cartas ===\n");
 
     // Cadastro da primeira carta
     printf("\nDigite o nome do primeiro país: ");
-    scanf(" %[^\n]", carta1.nomePais);  // permite espaços no nome
+    scanf(" %[^\n]", nomePais1);  // permite espaços no nome
 
     printf("Digite a população: ");
-    scanf("%d", &carta1.populacao);
+    scanf("%d", &populacao1);
 
     printf("Digite a área (km²): ");
-    scanf("%lf", &carta1.area);
+    scanf("%lf", &area1);
 
     printf("Digite o PIB (em trilhões): ");
-    scanf("%lf", &carta1.pib);
+    scanf("%lf", &pib1);
 
     printf("Digite o número de pontos turísticos: ");
-    scanf("%d", &carta1.pontosTuristicos);
+    scanf("%d", &pontosTuristicos1);
 
-    carta1.densidadeDemografica = (double)carta1.populacao / carta1.area;
+    densidadeDemografica1 = (double)populacao1 / area1;
 
     // Cadastro da segunda carta
     printf("\nDigite o nome do segundo país: ");
-    scanf(" %[^\n]", carta2.nomePais);  // permite espaços no nome
+    scanf(" %[^\n]", nomePais2);  // permite espaços no nome
 
     printf("Digite a população: ");
-    scanf("%d", &carta2.populacao);
+    scanf("%d", &populacao2);
 
     printf("Digite a área (km²): ");
-    scanf("%lf", &carta2.area);
+    scanf("%lf", &area2);
 
     printf("Digite o PIB (em trilhões): ");
-    scanf("%lf", &carta2.pib);
+    scanf("%lf", &pib2);
 
     printf("Digite o número de pontos turísticos: ");
-    scanf("%d", &carta2.pontosTuristicos);
+    scanf("%d", &pontosTuristicos2);
 
-    carta2.densidadeDemografica = (double)carta2.populacao / carta2.area;
+    densidadeDemografica2 = (double)populacao2 / area2;
 
     // Exibição dos dados cadastrados
     printf("\n=== Cartas Cadastradas ===\n");
     printf("País: %s | População: %d | Área: %.2f | PIB: %.2f | Pontos Turísticos: %d | Densidade: %.2f\n",
-           carta1.nomePais, carta1.populacao, carta1.area, carta1.pib, carta1.pontosTuristicos, carta1.densidadeDemografica);
+           nomePais1, populacao1, area1, pib1, pontosTuristicos1, densidadeDemografica1);
 
     printf("País: %s | População: %d | Área: %.2f | PIB: %.2f | Pontos Turísticos: %d | Densidade: %.2f\n",
-           carta2.nomePais, carta2.populacao, carta2.area, carta2.pib, carta2.pontosTuristicos, carta2.densidadeDemografica);
+           nomePais2, populacao2, area2, pib2, pontosTuristicos2, densidadeDemografica2);
 
     // Parte do jogo
     printf("\n=== SUPER TRUNFO - PAÍSES ===\n");
@@ -72,63 +68,63 @@ int main() {
 
     if (opcao == 1) {
         printf("\nComparando População\n");
-        printf("%s: %d\n", carta1.nomePais, carta1.populacao);
-        printf("%s: %d\n", carta2.nomePais, carta2.populacao);
+        printf("%s: %d\n", nomePais1, populacao1);
+        printf("%s: %d\n", nomePais2, populacao2);
 
-        if (carta1.populacao == carta2.populacao) {
+        if (populacao1 == populacao2) {
             printf("Resultado: Empate!\n");
-        } else if (carta1.populacao > carta2.populacao) {
-            printf("Vencedor: %s\n", carta1.nomePais);
+        } else if (populacao1 > populacao2) {
+            printf("Vencedor: %s\n", nomePais1);
         } else {
-            printf("Vencedor: %s\n", carta2.nomePais);
+            printf("Vencedor: %s\n", nomePais2);
         }
     } else if (opcao == 2) {
         printf("\nComparando Área\n");
-        printf("%s: %.2f\n", carta1.nomePais, carta1.area);
-        printf("%s: %.2f\n", carta2.nomePais, carta2.area);
+        printf("%s: %.2f\n", nomePais1, area1);
+        printf("%s: %.2f\n", nomePais2, area2);
 
-        if (carta1.area == carta2.area) {
+        if (area1 == area2) {
             printf("Resultado: Empate!\n");
-        } else if (carta1.area > carta2.area) {
-            printf("Vencedor: %s\n", carta1.nomePais);
+        } else if (area1 > area2) {
+            printf("Vencedor: %s\n", nomePais1);
         } else {
-            printf("Vencedor: %s\n", carta2.nomePais);
+            printf("Vencedor: %s\n", nomePais2);
         }
     } else if (opcao == 3) {
         printf("\nComparando PIB\n");
-        printf("%s: %.2f\n", carta1.nomePais, carta1.pib);
-        printf("%s: %.2f\n", carta2.nomePais, carta2.pib);
+        printf("%s: %.2f\n", nomePais1, pib1);
+        printf("%s: %.2f\n", nomePais2, pib2);
 
-        if (carta1.pib == carta2.pib) {
+        if (pib1 == pib2) {
             printf("Resultado: Empate!\n");
-        } else if (carta1.pib > carta2.pib) {
-            printf("Vencedor: %s\n", carta1.nomePais);
+        } else if (pib1 > pib2) {
+            printf("Vencedor: %s\n", nomePais1);
         } else {
-            printf("Vencedor: %s\n", carta2.nomePais);
+            printf("Vencedor: %s\n", nomePais2);
         }
     } else if (opcao == 4) {
         printf("\nComparando Pontos Turísticos\n");
-        printf("%s: %d\n", carta1.nomePais, carta1.pontosTuristicos);
-        printf("%s: %d\n", carta2.nomePais, carta2.pontosTuristicos);
+        printf("%s: %d\n", nomePais1, pontosTuristicos1);
+        printf("%s: %d\n", nomePais2, pontosTuristicos2);
 
-        if (carta1.pontosTuristicos == carta2.pontosTuristicos) {
+        if (pontosTuristicos1 == pontosTuristicos2) {
             printf("Resultado: Empate!\n");
-        } else if (carta1.pontosTuristicos > carta2.pontosTuristicos) {
-            printf("Vencedor: %s\n", carta1.nomePais);
+        } else if (pontosTuristicos1 > pontosTuristicos2) {
+            printf("Vencedor: %s\n", nomePais1);
         } else {
-            printf("Vencedor: %s\n", carta2.nomePais);
+            printf("Vencedor: %s\n", nomePais2);
         }
     } else if (opcao == 5) {
         printf("\nComparando Densidade Demográfica\n");
-        printf("%s: %.2f\n", carta1.nomePais, carta1.densidadeDemografica);
-        printf("%s: %.2f\n", carta2.nomePais, carta2.densidadeDemografica);
+        printf("%s: %.2f\n", nomePais1, densidadeDemografica1);
+        printf("%s: %.2f\n", nomePais2, densidadeDemografica2);
 
-        if (carta1.densidadeDemografica == carta2.densidadeDemografica) {
+        if (densidadeDemografica1 == densidadeDemografica2) {
             printf("Resultado: Empate!\n");
-        } else if (carta1.densidadeDemografica < carta2.densidadeDemografica) {
-            printf("Vencedor: %s\n", carta1.nomePais);
+        } else if (densidadeDemografica1 < densidadeDemografica2) {
+            printf("Vencedor: %s\n", nomePais1);
         } else {
-            printf("Vencedor: %s\n", carta2.nomePais);
+            printf("Vencedor: %s\n", nomePais2);
         }
     } else {
         printf("Opção inválida! Tente novamente.\n");
